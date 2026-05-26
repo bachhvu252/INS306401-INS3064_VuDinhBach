@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --button-gradient: linear-gradient(to right, #667eea, #764ba2);
+            --bg-color: #e4e9f7;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --input-bg: #f7f9fc;
+            --input-focus-border: #667eea;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-color);
+            background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card-container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            max-width: 450px;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .card-container:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-size: 28px;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        form { width: 100%; }
+        .form-group { margin-bottom: 20px; }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background: var(--input-bg);
+            font-size: 14px;
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            border-radius: 20px;
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            background: #fff;
+            border-color: var(--input-focus-border);
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        button {
+            background: var(--button-gradient);
+            color: white;
+            padding: 15px 0;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(118, 75, 162, 0.3);
+            filter: brightness(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <h1>Get in Touch</h1>
+        <form method="POST" action="submit.php">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="subject" placeholder="Subject">
+            </div>
+
+            <div class="form-group">
+                <textarea name="message" placeholder="Type your message here..." required></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
